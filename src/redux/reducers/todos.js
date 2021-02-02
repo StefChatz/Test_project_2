@@ -16,7 +16,8 @@ const todoReducer = (state = initialState, action) => {
           ...state.byIds,
           [id]: {
             content,
-            completed: false
+            completed: false,
+            visibility: 'all'
           }
         }
       };
