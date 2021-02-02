@@ -4,7 +4,7 @@ import visibilityFilter from './reducers/visibilityFilter';
 
 export default configureStore({
 	reducer: {
-		todoReducer,
+		todosList: todoReducer,
 		visibilityFilter
 	},
 });
