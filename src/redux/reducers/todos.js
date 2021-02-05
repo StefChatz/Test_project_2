@@ -5,7 +5,7 @@ const initialState = {
   byIds: {}
 };
 
-const todoReducer = (state = initialState, action) => {
+export default function(state = initialState, action) {
   switch (action.type) {
     case ADD_TODO: {
       const { id, content } = action.payload;
@@ -16,8 +16,7 @@ const todoReducer = (state = initialState, action) => {
           ...state.byIds,
           [id]: {
             content,
-            completed: false,
-            visibility: 'all'
+            completed: false
           }
         }
       };
@@ -39,5 +38,3 @@ const todoReducer = (state = initialState, action) => {
       return state;
   }
 }
-
-export default todoReducer;

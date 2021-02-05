@@ -1,10 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
-import todoReducer from './reducers/todos';
-import visibilityFilter from './reducers/visibilityFilter';
+import { createStore } from "redux";
+import rootReducer from "./reducers";
 
-export default configureStore({
-	reducer: {
-		todosList: todoReducer,
-		visibilityFilter
-	},
-});
+export default createStore(rootReducer);
