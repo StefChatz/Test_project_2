@@ -6,11 +6,19 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
+  
+  console.log('state', state)
+  console.log('action', action)
+  
   switch (action.type) {
     case ADD_TODO: {
-      const { id, content } = action.payload;
+    const {id, content} = action.payload
+      console.log('id', id)
+      console.log('content', content)
+      console.log('000', {...state})
+
       return {
-        ...state,
+      ...state,
         allIds: [...state.allIds, id],
         byIds: {
           ...state.byIds,
@@ -19,7 +27,7 @@ export default function(state = initialState, action) {
             completed: false
           }
         }
-      };
+      }
     }
     case TOGGLE_TODO: {
       const { id } = action.payload;
