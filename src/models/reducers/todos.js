@@ -23,6 +23,7 @@ export default function(state = initialState, action) {
         byIds: {
           ...state.byIds,
           [id]: {
+            id,
             content,
             completed: false
           }
@@ -31,13 +32,14 @@ export default function(state = initialState, action) {
     }
     case TOGGLE_TODO: {
       const { id } = action.payload;
+      console.log('>>>', id)
       return {
         ...state,
         byIds: {
           ...state.byIds,
           [id]: {
             ...state.byIds[id],
-            completed: !state.byIds[id].completed
+            completed: !state?.byIds[id]?.completed
           }
         }
       };

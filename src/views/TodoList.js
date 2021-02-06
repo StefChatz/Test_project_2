@@ -9,6 +9,8 @@ const TodoList = ({todoList}) => (
     <ul className="todo-list">
       {todoList && !isEmpty(todoList)
           ? map(todoList, (todo, index) => {
+            console.log('todo', todo)
+            
             return <Todo key={`todo-${todo.id} + ${index}`} todo={todo} />;
           })
           : `No todos, yay!`
